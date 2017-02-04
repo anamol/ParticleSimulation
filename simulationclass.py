@@ -15,12 +15,14 @@ class Simulation():
 		self.Ymax = Ymax
 		self.NoofParticles = NoofParticles
 		self.timestep = timestep
+		radius = 0.001;
 		self.__Initialize(0.001, 1800)
 		self.tfinal = tfinal
 		self.Noofsteps = int(tfinal/timestep)
 
 
 	def __Initialize(self, radius, density):
+		""" Helper function. Initializes particle while checking for overlap  """
 		for ctr in range(self.NoofParticles):
 			if (self.ParticlesPresent == False):
 				Xposition = random.random() * self.Xmax
@@ -57,7 +59,7 @@ class Simulation():
 	def RunSimulation(self):
 
 		for ctr2 in range(self.Noofsteps):
-			self.Visualize(
+			self.Visualize();
 
 			for ctr in range(self.NoofParticles):
 				changeinXpos = self.AllParticles[ctr].velocity[0] * self.timestep
@@ -78,6 +80,7 @@ class Simulation():
 			
 
 	def __CheckIntersection(self, particle1, particle2):
+		""" Checks if any particles are intersecting """
 		
 		intersection = False
 		dist = math.sqrt((particle1.position[0] - particle2.position[0])**2 + (particle1.position[1] - particle2.position[1])**2)
@@ -143,8 +146,8 @@ class Simulation():
 		return intersection
 
 
-	def __Collision(self):
-		""" Checks whether or not two particles are colliding. Returns True if collision occurs, False if not"""
+	"""def __Collision(self):
+		 Checks whether or not two particles are colliding. Returns True if collision occurs, False if not """
 
 
 

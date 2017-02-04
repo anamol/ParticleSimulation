@@ -1,5 +1,9 @@
 class Particle():
+	""" Defines the particle. Stores the radius, density, position vector, velocity vector of particle. """
+	
 	def __init__(self, radius, density, position, velocity, Xmax, Ymax):
+		""" Initializes particle with given radius, density, position and velocity. Xmax and Ymax are maximum
+			bounds of simulation domain. """
 		self.radius = radius
 		self.density = density
 		self.position = position

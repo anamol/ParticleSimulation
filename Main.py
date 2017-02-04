@@ -1,7 +1,15 @@
+""" Main function for Particle Simulation """
+
+
 import simulationclass
 import particleclass
 
-simone = simulationclass.Simulation(1, 1, 1000, 0.1, 1)
+Xmax = 1
+Ymax = 1
+NoofParticles = 1000
+timestep = 0.1
+tfinal = 1;
+simone = simulationclass.Simulation(Xmax, Ymax, NoofParticles, timestep, tfinal)
 
 #simone.DisplayParticlesTable()
 
