@@ -1,3 +1,6 @@
+Particle Collision Simulator
+===================
+
 This is a work in progress.
 
 This is the readme file for the Particle Simulation software. We are trying to simulate a lot of particles
